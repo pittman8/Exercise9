@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Exercise 9</title>
+      
+    <script src = "./roadSigns.js"></script>
+      
+    <!-- All canvases must be absolute to the overall relative div 
+         The circle is the bottom layer (z-index: 1)
+         The contents of the circle are all on the second layer (z-index: 2) -->
+    <style type="text/css">
+        canvas {
+            position: absolute;
+            left: 0px; 
+            top: 0px;
+        }
+        
+        #circle {
+            z-index: 1;
+        }
+        
+        #doNot, #enter, #rectangle {
+            z-index: 2;
+        }
+        
+    </style>
+  </head>
+    
+  <!-- All draw() functions are called from script file -->    
+  <body onload="drawAll();">
+      <div style="position: relative;">
+        <canvas id = "circle" width="300" height="300"></canvas>
+        <canvas id = "doNot" width ="300" height="300"></canvas>
+        <canvas id = "enter" width ="300" height="300"></canvas>
+        <canvas id = "rectangle" width ="300" height="300"></canvas>
+      </div>
+  </body>
+</html>
